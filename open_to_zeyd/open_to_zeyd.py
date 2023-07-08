@@ -5,12 +5,9 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 def main():
     file_name_input, file_name_output = sys_input()
     try:
-
         with Image.open("open_to_zeydV2-removebg-preview.png") as circule:
-            # size_circule = circule.size
             with Image.open(file_name_input) as person:
                 circule = ImageOps.fit(circule , (person.size))
-
                 person.paste(circule , circule)
                 person.save(file_name_output)
 
